@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassGEN</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+     <div class="box">
+        <h2>Random PassWord GENERATOR</h2>
+        <div class="form">
+            <input type="text" placeholder="Click On Generator !!" id="password" required randomly>
+            <div class="btn">
+                <div class="btn1" id="gen" onclick="generator()"> Generator</div>
+                 <div class="btn2" id="copy" onclick="copybtn()">copy</div>
+            </div>
+        </div>
+        
+     </div>
+     <script>
+        var password = document.getElementById("password");
+        function generator() {
+     
+            var char="1234567890!@#$%^&*(){}qwertyuiopasdfghjklzxcvbnm";
+            var passl=12;
+            var password="";
+            for(var i=0;i<=passl;i++){
+                var rand=Math.floor(Math.random()*char.length);
+                password+=char.substring(rand,rand+1);
+
+            }
+            document.getElementById("password").value=password;
+
+
+    }
+    function copybtn(){
+        var copytext=document.getElementById("password");
+        copytext.select();
+        copytext.setSelectionRange(0, 99999);
+
+        document.execCommand("copy");
+    }
+     </script>
+</body>
+</html>
